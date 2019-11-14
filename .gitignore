@@ -1,0 +1,7 @@
+data/mysql/*
+data/logs/*
+data/dumps/*
+!data/mysql/.gitkeep
+!data/logs/.gitkeep
+!data/dumps/.gitkeep
+.containerid
