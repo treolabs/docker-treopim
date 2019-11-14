@@ -78,17 +78,3 @@ services:
     depends_on:
             - database_server
 
-
-  proxy_server:
-    build:
-      context: ./proxy_server/
-    container_name: $PROXY_CONTAINER_NAME
-    ports:
-      - ${PROXY_PORT}:80
-    links:
-      - web_server
-    environment:
-      DOMAIN: ${DOMAIN}
-      PROXY_PORT: ${PROXY_PORT}
-    depends_on:
-      - web_server
