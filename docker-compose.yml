@@ -1,15 +1,12 @@
 version: '3'
 services:
   web_server:
-    build:
-      context: ./web_server/
+    image: treolabs/docker-web-php:latest
     container_name: $APACHE_CONTAINER_NAME
     depends_on:
       - database_server
     volumes:
       - ../:/var/www/html
-      - ./web_server/php5.6/config:/etc/php/5.6
-      - ./web_server/php7.0/config:/etc/php/7.0
       - ./web_server/php7.1/config:/etc/php/7.1
       - ./web_server/php7.2/config:/etc/php/7.2
       - ./web_server/php7.3/config:/etc/php/7.3
@@ -43,7 +40,6 @@ services:
 
     depends_on:
             - database_server
-
 
 
   database_server:

@@ -11,7 +11,7 @@ If that script is completed successfully, you will have to open the http://local
 |**``docker-run.sh``**      | main script for starting all containers  |     
 |**``.env``**                | main configuration file				|  
 | ``data``                   | folder with user data          | 
-|``web_server``              | container for web server (Apache + PHP)   |     
+|``web_server``              | list files for web server (Apache + PHP)   |     
 |``docker-apache.sh``       | connection to the container with web server  |    
 |``docker-mysql.sh``        | connection to the container with MySQL server  |       
 |``docker-clean.sh``        | script for cleaning downloaded Docker images |     
@@ -78,7 +78,7 @@ Without cloning projects in the container, _DocumentRoot_ has the _/var/www/html
 
 > The default value is _7.3_
 
-> Allowed values are 5.6, 7.0, 7.1, 7.2, 7.3.
+> Allowed values are 7.1, 7.2, 7.3.
 
 **MYSQL_DATABASE** – the local DB name in the `database_server` container.
  
@@ -128,7 +128,7 @@ The main project must be stored in the root folder, i.e. the project folder must
 
 ```./
 └── home
-    └── localhost - project folder
+    └── localhost - There is Treo family project folder
         └── docker - Docker folder
         │   ├── data
         │   │   ├── dumps
@@ -136,9 +136,6 @@ The main project must be stored in the root folder, i.e. the project folder must
         │   │   ├── logs
         │   │   └── mysql
         │   └── web_server
-        │       ├── entrypoint.d
-        │       ├── php5.6
-        │       ├── php7.0
         │       ├── php7.1
         │       ├── php7.2
         │       ├── php7.3
@@ -148,7 +145,7 @@ The main project must be stored in the root folder, i.e. the project folder must
 
 - Database host to connect to within Docker: `database_server`.
 - Mail sending server: `mail.server:1025`.
-- Environment variables in order to understand that we are in Docker: `ENV=DOCKER` and `SHOPWARE_ENV=dev`.
+- Environment variables in order to understand that we are in Docker: `ENV=DOCKER`.
 
 ### Connecting to Docker Containers
 
